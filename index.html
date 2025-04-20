@@ -1,28 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Crash Mode</title>
-  <style>
-    body {
-      background: black;
-      color: lime;
-      font-family: monospace;
-      font-size: 16px;
-      padding: 20px;
-    }
-  </style>
+  <title>Memory Attack</title>
 </head>
 <body>
-  <h1>System Error</h1>
-  <p>Device overheating... shutting down system processes...</p>
-  <button onclick="crash()">Execute</button>
+  <h1>Memory Attack Demo</h1>
+  <p>Warning: This may freeze your browser. Use with caution.</p>
+  <button onclick="attack()">Launch Attack</button>
 
   <script>
-    function crash() {
-      document.body.innerHTML = "<pre>CRITICAL ERROR: SYSTEM KERNEL PANIC\nDumping memory...\n█ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █\nSystem Halted.</pre>";
-      setTimeout(() => {
-        while (true) {}
-      }, 1000);
+    function attack() {
+      const memory = [];
+      while (true) {
+        // Push large arrays into memory endlessly
+        memory.push(new Array(1000000).fill("CRASH"));
+      }
     }
   </script>
 </body>
