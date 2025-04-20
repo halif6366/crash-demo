@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Crash Mode</title>
+  <style>
+    body {
+      background: black;
+      color: lime;
+      font-family: monospace;
+      font-size: 16px;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>System Error</h1>
+  <p>Device overheating... shutting down system processes...</p>
+  <button onclick="crash()">Execute</button>
+
+  <script>
+    function crash() {
+      document.body.innerHTML = "<pre>CRITICAL ERROR: SYSTEM KERNEL PANIC\nDumping memory...\n█ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █\nSystem Halted.</pre>";
+      setTimeout(() => {
+        while (true) {}
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
